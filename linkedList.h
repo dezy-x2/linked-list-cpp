@@ -9,7 +9,7 @@ class LinkedList {
         Node* headNode;
     public:
         LinkedList();
-        LinkedList(int size, Node* headNode);
+        LinkedList(Node* headNode);
         void add(Node* newNode);
         Node* get(int at);
         Node* pop();
