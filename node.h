@@ -12,7 +12,7 @@ class Node {
         Node(int data, Node* nextNode);
         int getData();
         void setData(int newData);
-        Node& getNextNode();
+        Node * getNextNode();
         void setNextNode(Node* newNextNode);
 };
 
