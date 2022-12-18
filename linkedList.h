@@ -11,6 +11,7 @@ class LinkedList {
         LinkedList();
         LinkedList(Node* headNode);
         void add(Node* newNode);
+        void add(int data);
         Node* get(int at);
         Node* pop();
 };

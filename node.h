@@ -9,6 +9,7 @@ class Node {
         Node* nextNode;
     public:
         Node();
+        Node(int data);
         Node(int data, Node* nextNode);
         int getData();
         void setData(int newData);
