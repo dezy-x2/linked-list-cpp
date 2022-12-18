@@ -27,3 +27,6 @@ Node * Node::getNextNode() {
 void Node::setNextNode(Node* newNextNode) {
     nextNode = newNextNode;
 }
+void Node::printNode() {
+    cout << "{data: " << data << "}" << endl;
+}

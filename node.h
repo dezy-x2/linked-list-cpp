@@ -15,6 +15,7 @@ class Node {
         void setData(int newData);
         Node * getNextNode();
         void setNextNode(Node* newNextNode);
+        void printNode();
 };
 
 #endif

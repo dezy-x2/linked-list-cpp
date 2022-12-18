@@ -14,6 +14,7 @@ class LinkedList {
         void add(int data);
         Node* get(int at);
         Node* pop();
+        void printList();
 };
 
 #endif

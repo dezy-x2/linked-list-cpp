@@ -9,6 +9,7 @@ LinkedList::LinkedList() {
 }
 LinkedList::LinkedList(Node* headNode) {
     cout << "::MEM.ACCESS.CREATE.LINKEDLIST" << endl;
+    size = 1;
     this->headNode = headNode;
 
 }
@@ -57,4 +58,14 @@ Node* LinkedList::pop() {
         currNode = currNode->getNextNode();
     }
     return currNode;
+}
+void LinkedList::printList() {
+    cout << "[" << endl;
+    Node* currNode = headNode;
+    while (currNode != nullptr) {
+        cout << "\t";
+        currNode->printNode();
+        currNode = currNode->getNextNode();
+    }
+    cout << "]" << endl;
 }
