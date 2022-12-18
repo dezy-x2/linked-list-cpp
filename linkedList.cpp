@@ -13,6 +13,9 @@ LinkedList::LinkedList(Node* headNode) {
     this->headNode = headNode;
 
 }
+int LinkedList::getSize() {
+    return this->size;
+}
 void LinkedList::add(Node* newNode) {
     if (!headNode) {
         headNode = newNode;

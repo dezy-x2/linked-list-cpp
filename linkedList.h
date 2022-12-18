@@ -10,6 +10,7 @@ class LinkedList {
     public:
         LinkedList();
         LinkedList(Node* headNode);
+        int getSize();
         void add(Node* newNode);
         void add(int data);
         Node* get(int at);
