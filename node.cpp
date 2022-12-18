@@ -22,7 +22,7 @@ int Node::getData() {
 void Node::setData(int newData) {
     data = newData;
 }
-Node * Node::getNextNode() {
+Node* Node::getNextNode() {
     return nextNode;
 }
 void Node::setNextNode(Node* newNextNode) {
