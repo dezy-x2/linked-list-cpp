@@ -16,6 +16,7 @@ class LinkedList {
         Node* get(int at);
         Node* pop();
         void printList();
+        void deleteNode(int at);
 };
 
 #endif

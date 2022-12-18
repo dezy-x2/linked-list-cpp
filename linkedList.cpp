@@ -4,6 +4,7 @@
 using namespace std;
 
 LinkedList::LinkedList() {
+    size = 0;
     this->headNode = nullptr;
     cout << "::MEM.ACCESS.CREATE_BLANK.LINKEDLIST" << endl;
 }
@@ -39,7 +40,6 @@ void LinkedList::add(int data) {
     }
     Node* currNode = headNode;
     while(currNode->getNextNode() != nullptr) {
-        cout << "hello to yall" << endl;
         if (currNode->getNextNode()) currNode = currNode->getNextNode();
         else break;
     }
@@ -47,6 +47,7 @@ void LinkedList::add(int data) {
     currNode->setNextNode(newNode);
 }
 Node* LinkedList::get(int at) {
+    if (at >= size) return nullptr;
     Node* currNode = headNode;
     for (int i=0; i<at && currNode->getNextNode() != nullptr; i++) {
         currNode = currNode->getNextNode();
@@ -56,10 +57,13 @@ Node* LinkedList::get(int at) {
 Node* LinkedList::pop() {
     Node* prevNode = headNode;
     Node* currNode = headNode->getNextNode();
+    int i = 0;
     while (currNode->getNextNode() != nullptr) {
         prevNode = currNode;
         currNode = currNode->getNextNode();
+        i++;
     }
+    deleteNode(i+1);
     return currNode;
 }
 void LinkedList::printList() {
@@ -71,4 +75,19 @@ void LinkedList::printList() {
         currNode = currNode->getNextNode();
     }
     cout << "]" << endl;
+}
+void LinkedList::deleteNode(int at) {
+    if (at == 0) {
+        Node* toBeDeleted = this->get(0);
+        Node* after = this->get(1);
+        headNode = nullptr;
+        headNode = after;
+        delete toBeDeleted;
+        return;
+    }
+    Node* toBeDeleted = this->get(at);
+    Node* before = this->get(at-1);
+    Node* after = this->get(at+1);
+    before->setNextNode(after);
+    delete toBeDeleted;
 }

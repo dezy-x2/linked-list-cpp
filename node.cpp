@@ -9,6 +9,7 @@ Node::Node() {
 Node::Node(int data) {
     this->nextNode = nullptr;
     this->data = data;
+    cout << "::MEM.ACCESS.CREATE.NODE:DATA=" << data << endl;
 }
 Node::Node(int data, Node* nextNode) {
     this->data = data;
