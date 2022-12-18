@@ -3,8 +3,12 @@
 using namespace std;
 
 Node::Node() {
-    this->nextNode = new Node();
+    this->nextNode = nullptr;
     cout << "::MEM.ACCESS.CREATE_BLANK.NODE" << endl;
+}
+Node::Node(int data) {
+    this->nextNode = nullptr;
+    this->data = data;
 }
 Node::Node(int data, Node* nextNode) {
     this->data = data;
