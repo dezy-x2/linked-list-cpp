@@ -10,6 +10,8 @@ int main() {
     myList.add(14);
     myList.add(16);
     myList.printList();
-    myList.pop();
+    myList.deleteNode(0);
+    myList.printList();
+    myList.add(18);
     myList.printList();
 }

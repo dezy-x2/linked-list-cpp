@@ -3,20 +3,38 @@
 #include "node.h"
 using namespace std;
 
+/**
+ * @brief Construct a new Linked List:: Linked List object (default)
+ * 
+ */
 LinkedList::LinkedList() {
     size = 0;
     this->headNode = nullptr;
     cout << "::MEM.ACCESS.CREATE_BLANK.LINKEDLIST" << endl;
 }
+/**
+ * @brief Construct a new Linked List:: Linked List object
+ * 
+ * @param headNode[Node*] Head node of the linked list
+ */
 LinkedList::LinkedList(Node* headNode) {
     cout << "::MEM.ACCESS.CREATE.LINKEDLIST" << endl;
     size = 1;
     this->headNode = headNode;
-
 }
+/**
+ * @brief returns the current size of the linked list
+ * 
+ * @return [int] - size of the linked list
+ */
 int LinkedList::getSize() {
     return this->size;
 }
+/**
+ * @brief adds a new node to the linked list either as the head node or just next in the chain
+ * 
+ * @param newNode[Node*] node to be added to the list
+ */
 void LinkedList::add(Node* newNode) {
     if (!headNode) {
         headNode = newNode;
@@ -31,6 +49,11 @@ void LinkedList::add(Node* newNode) {
     size++;
     currNode->setNextNode(newNode);
 }
+/**
+ * @brief adds a new node to the linked list either as the head node or just next in the chain
+ * 
+ * @param data[int] data to be created into a new node to add to the list
+ */
 void LinkedList::add(int data) {
     Node* newNode = new Node(data);
     if (headNode == nullptr) {
@@ -46,6 +69,12 @@ void LinkedList::add(int data) {
     size++;
     currNode->setNextNode(newNode);
 }
+/**
+ * @brief returns a node at the specified index
+ * 
+ * @param at[int] index at which to retrieve the node
+ * @return [Node*] - node at the specified index 
+ */
 Node* LinkedList::get(int at) {
     if (at >= size) return nullptr;
     Node* currNode = headNode;
@@ -54,6 +83,11 @@ Node* LinkedList::get(int at) {
     }
     return currNode;
 }
+/**
+ * @brief deletes the last node of the linked list and returns it
+ * 
+ * @return [Node*] - the removed node
+ */
 Node* LinkedList::pop() {
     Node* prevNode = headNode;
     Node* currNode = headNode->getNextNode();
@@ -66,6 +100,10 @@ Node* LinkedList::pop() {
     deleteNode(i+1);
     return currNode;
 }
+/**
+ * @brief prints out the linked list with its data
+ * 
+ */
 void LinkedList::printList() {
     cout << "[" << endl;
     Node* currNode = headNode;
@@ -76,6 +114,11 @@ void LinkedList::printList() {
     }
     cout << "]" << endl;
 }
+/**
+ * @brief deletes but does not return a node at a specified index
+ * 
+ * @param at[int] index at which to delete the node
+ */
 void LinkedList::deleteNode(int at) {
     if (at == 0) {
         Node* toBeDeleted = this->get(0);
